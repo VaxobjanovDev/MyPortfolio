@@ -5,7 +5,7 @@ import { ButtonSvg } from "./Img/svg";
 const Button = () => {
   return (
     <ButtonStyle>
-      <NavLink to='/'>
+      <NavLink to="/">
         <ButtonSvg height={50} width={50} fill="currentColor" />
       </NavLink>
     </ButtonStyle>
