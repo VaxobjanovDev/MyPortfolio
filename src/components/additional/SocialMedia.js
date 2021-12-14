@@ -1,7 +1,7 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { Icons } from "../styles/Icons";
-import { Line } from "../styles/Line";
+import { Lines } from "../styles/Lines";
 import { GitHub, Instagram, Telegram, YouTube } from "./Img/svg";
 
 const SocialMedia = () => {
@@ -28,7 +28,7 @@ const SocialMedia = () => {
         </NavLink>
       </div>
 
-      <Line />
+      <Lines />
     </Icons>
   );
 };

@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const ButtonStyle = styled.button`
-  z-index: 1;
-  cursor: pointer;
+	z-index:1;
+	cursor:pointer;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -12,7 +12,7 @@ export const ButtonStyle = styled.button`
   position: fixed;
   top: 2rem;
   left: 50%;
-  right: 50%;
+  right:50%;
   background-color: #f2efe2;
 
   text-decoration: none;
