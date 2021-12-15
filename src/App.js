@@ -16,7 +16,7 @@ const App = () => {
       <ThemeProvider theme={lightTheme}>
         <BrowserRouter>
           <Routes>
-            <Route  path="/" element={<Main/>} />
+            <Route path='/' element={<Main/>} />
             <Route path="/about" element={<About/>} />
             <Route path="/blog" element={<Blog/>} />
             <Route path="/skills" element={<Skills/>} />

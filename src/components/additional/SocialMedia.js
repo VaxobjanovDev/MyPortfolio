@@ -1,34 +1,56 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
-import { Icons } from "../styles/Icons";
-import { Lines } from "../styles/Lines";
+import { Link, NavLink } from "react-router-dom";
+import { Icons } from "./styles/Icons";
+import { Lines } from "./styles/Lines";
 import { GitHub, Instagram, Telegram, YouTube } from "./Img/svg";
+import { darkTheme } from "../../styles/Theme.styled";
 
-const SocialMedia = () => {
+const SocialMedia = (props) => {
   return (
     <Icons>
       <div>
-        <NavLink to="/">
-          <GitHub width={25} height={25} />
+        <Link target="_blank" to="https://github.com/VaxobjanovDev">
+          <GitHub
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+						
+          />
+        </Link>
+      </div>
+      <div>
+        <NavLink
+          aria-current="false"
+          target="_blank"
+          to={{ pathname: "https://t.me/VaxobjanovDev" }}
+        >
+          <Telegram
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
       <div>
         <NavLink to="/">
-          <Telegram width={25} height={25} />
+          <Instagram
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
       <div>
         <NavLink to="/">
-          <Instagram width={25} height={25} />
-        </NavLink>
-      </div>
-      <div>
-        <NavLink to="/">
-          <YouTube width={25} height={25} />
+          <YouTube
+            width={30}
+            height={30}
+            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+          />
         </NavLink>
       </div>
 
-      <Lines />
+      <Lines color={props.theme}/>
     </Icons>
   );
 };

@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const ButtonStyle = styled.button`
-	z-index:1;
+  position:absolute;
+  transform:translate(-50%,-50%);
+	z-index:3;
 	cursor:pointer;
   display: flex;
   align-items: center;
@@ -10,9 +12,9 @@ export const ButtonStyle = styled.button`
   width: 3.5rem;
   height: 3.5rem;
   position: fixed;
-  top: 2rem;
+  margin: 2rem auto;
   left: 50%;
-  right:50%;
+
   background-color: #f2efe2;
 
   text-decoration: none;

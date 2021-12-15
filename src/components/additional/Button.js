@@ -1,6 +1,6 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
-import { ButtonStyle, Img, Wrapper } from "../styles/Button.styled";
+import { ButtonStyle } from "./styles/Button.styled";
 import { ButtonSvg } from "./Img/svg";
 const Button = () => {
   return (
