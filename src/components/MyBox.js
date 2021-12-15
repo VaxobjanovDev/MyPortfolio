@@ -34,18 +34,18 @@ const MyBox = () => {
   `;
   return (
     <Box>
-      {/* <BoxContainer> */}
-				{/* <Text>
+      <BoxContainer>
+				<Text>
 					<h1>Hello everyone</h1>
 					<h3>I'm Vaxobjanov G'avsiddin</h3>
 					<h6>I'm a web developer</h6>
-				</Text> */}
-			{/* </BoxContainer>
-			<BoxContainer> */}
+				</Text>
+			</BoxContainer>
+			<BoxContainer>
 				<div>
 					<img style={{background:'transparent'}} src={Me}/>
 				</div>
-			{/* </BoxContainer> */}
+			</BoxContainer>
     </Box>
   );
 };
