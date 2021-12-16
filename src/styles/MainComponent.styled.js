@@ -67,7 +67,7 @@ export const DarkContainer = styled.div`
 	right:50%;
 	width:${props=>props.click?"50%":"0%"};
 	height:${props=>props.click?"100%":"0%"};
-	transition:height 0.5s ease , width 1s ease 0.5s;
+	transition:height 0.5s ease, width 1s ease 0.5s;
 	z-index:1;
 `
 
