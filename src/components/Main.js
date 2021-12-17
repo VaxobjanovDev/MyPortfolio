@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React, { useState } from "react";
 import { About, Blog, BottomBar, Center, Contact, Container, DarkContainer, MainContainer, Skills, Work } from "../styles/MainComponent.styled";
 import Button from "./additional/Button";
@@ -21,30 +22,45 @@ const Main = () => {
 					<span>Click Me</span>
 				</Center>
 				<Contact to={{pathname:"asda"}}>
-					<h3>
+					<motion.h3
+					whileHover={{scale:1.1}}
+					whileTap={{scale:0.8}}
+					>
 						Write me...
-					</h3>
+					</motion.h3>
 				</Contact>
 				<Blog to="/blog">
-					<h3>
+				<motion.h3
+					whileHover={{scale:1.1}}
+					whileTap={{scale:0.8}}
+					>
 						Blog
-					</h3>
+					</motion.h3>
 				</Blog>
 				<Work to="/work" click={click}>
-					<h3>
+				<motion.h3
+					whileHover={{scale:1.1}}
+					whileTap={{scale:0.8}}
+					>
 						Work
-					</h3>
+					</motion.h3>
 				</Work>
 			<BottomBar>
 			<About to="/about" click={click}>
-					<h3>
+			<motion.h3
+					whileHover={{scale:1.1}}
+					whileTap={{scale:0.8}}
+					>
 						About
-					</h3>
+					</motion.h3>
 				</About>
 				<Skills to="/skills">
-					<h3>
+				<motion.h3
+					whileHover={{scale:1.1}}
+					whileTap={{scale:0.8}}
+					>
 						My Skills
-					</h3>
+					</motion.h3>
 				</Skills>
 			</BottomBar>
 			{click&&<MyBox/>}
