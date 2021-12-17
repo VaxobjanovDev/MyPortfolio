@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Me from "../components/assets/png-transparent-astronaut-astronaut-artist-drawing-printmaking-astronaut-poster-outer-space-painting.png";
+// import Me from "../components/assets/back.png";
+import Me from './assets/png-transparent-astronaut-astronaut-artist-drawing-printmaking-astronaut-poster-outer-space-painting.png'
 import { motion } from "framer-motion";
 
 
@@ -21,12 +22,13 @@ const Box = styled(motion.div)`
         ${(props) => props.theme.text} 50%
       )
       bottom,
-    linear-gradient(
+			linear-gradient(
         to right,
         ${(props) => props.theme.body} 50%,
         ${(props) => props.theme.text} 50%
       )
       top;
+ 
   background-repeat: no-repeat;
   background-size: 100% 2px;
 
@@ -47,7 +49,6 @@ const BoxContainer = styled.div`
     transform: translate(-50%, 0);
     width: 100%;
     height: auto;
-		background:transparent;
   }
 `;
 
