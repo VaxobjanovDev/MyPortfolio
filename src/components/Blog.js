@@ -1,12 +1,12 @@
 import styled from "styled-components";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import SocialMedia from "./additional/SocialMedia";
 import Background from "./assets/kisspng-astronaut-drawing-royalty-free-astronauta-ni-ntilde-o-5b4fbbece9bf76.9583068315319521089574.jpg";
 import BlogPost from "./BlogPost";
 import Blogs from "./data/data";
-
+import AnchorComponent from "./additional/Anchor";
 
 const MainContainer = styled.div`
   background-image: url(${Background});
@@ -37,17 +37,25 @@ const Grid = styled.div`
 `;
 
 const Blog = () => {
+  const [number, setNumber] = useState(0);
+
+  useEffect(() => {
+    let number = (window.innerHeight - 70) / 35;
+    setNumber(parseInt(number));
+  }, []);
+
   return (
     <MainContainer>
       <Container>
         <Button />
         <Logo />
         <SocialMedia />
+        <AnchorComponent number={number} />
         <Center>
           <Grid>
-						{Blogs.map((blog)=>(
-							<BlogPost key={blog.id} blog={blog} />
-						))}
+            {Blogs.map((blog) => (
+              <BlogPost key={blog.id} blog={blog} />
+            ))}
           </Grid>
         </Center>
       </Container>
