@@ -29,13 +29,21 @@ const Image = styled.div`
 	height:60%;
 	border:1px solid transparent;
 	background-position:center center;
+
+	${Box}:hover &{
+		border:1px solid ${props=>props.theme.body};
+	}
 `
 
 const Title = styled.h3`
 	font-weight:700;
 	color:inherit;
 	padding-top:1rem;
-	border-bottom:1px solid ${props=>props.theme.text}	
+	border-bottom:1px solid ${props=>props.theme.text};
+
+	${Box}:hover &{
+		border-bottom:1px solid ${props=>props.theme.body};
+	}
 `
 const Hashtags = styled.div`
 	padding:0.5rem 0;
