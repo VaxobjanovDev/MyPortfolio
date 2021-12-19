@@ -13,7 +13,7 @@ const SocialMedia = (props) => {
           <GitHub
             width={30}
             height={30}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
 						
           />
         </Link>
@@ -27,7 +27,7 @@ const SocialMedia = (props) => {
           <Telegram
             width={30}
             height={30}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
       </div>
@@ -36,7 +36,7 @@ const SocialMedia = (props) => {
           <Instagram
             width={30}
             height={30}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
       </div>
@@ -45,7 +45,7 @@ const SocialMedia = (props) => {
           <YouTube
             width={30}
             height={30}
-            fill={props.theme === "dark" ? darkTheme.text : darkTheme.body}
+            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
           />
         </NavLink>
       </div>
