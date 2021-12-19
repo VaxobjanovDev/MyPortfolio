@@ -3,7 +3,7 @@ import { darkTheme } from "../../../styles/Theme.styled";
 
 export const LogoStyle = styled.h1`
   display:inline-block;
-  color:${props=>props.color==='dark'?darkTheme.text:darkTheme.body};
+  color:${props=>props.color==='darkTheme'?darkTheme.text:darkTheme.body};
   font-family:'Indie Flower', cursive;
   font-weight:800;
   font-size:3rem;

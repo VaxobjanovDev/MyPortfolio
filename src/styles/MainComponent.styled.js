@@ -20,7 +20,7 @@ export const MainContainer = styled.div`
 `;
 
 export const Container = styled.div`
-  padding: 2rem;
+  padding: 0;
 `;
 
 const rotate = keyframes`
@@ -85,7 +85,7 @@ export const Blog = styled(NavLink)`
   position: absolute;
   top: 50%;
   transform: rotate(90deg) translate(-50%, -50%);
-  right: 2rem;
+  right: 3rem;
   font-size: 2rem;
   z-index: 3;
 `;
