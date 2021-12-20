@@ -1,6 +1,5 @@
 import React from "react";
 import styled from "styled-components";
-// import Me from "../components/assets/back.png";
 import Me from './assets/png-transparent-astronaut-astronaut-artist-drawing-printmaking-astronaut-poster-outer-space-painting.png'
 import { motion } from "framer-motion";
 
@@ -89,7 +88,7 @@ const MyBox = () => {
 					animate={{opacity:1}}
 					transition={{duration:1,delay:2}}
 				>
-          <img className="pic" src={Me} />
+          <img className="pic" src={Me} alt="Background" />
         </motion.div>
       </BoxContainer>
     </Box>

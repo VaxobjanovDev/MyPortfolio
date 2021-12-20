@@ -37,7 +37,7 @@ const Main = () => {
 						Blog
 					</motion.h3>
 				</Blog>
-				<Work to="/work" click={click}>
+				<Work to="/works" click={click}>
 				<motion.h3
 					whileHover={{scale:1.1}}
 					whileTap={{scale:0.8}}

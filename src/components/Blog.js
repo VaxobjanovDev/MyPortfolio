@@ -3,7 +3,7 @@ import React, { useEffect, useState } from "react";
 import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import SocialMedia from "./additional/SocialMedia";
-import Background from "./assets/kisspng-astronaut-drawing-royalty-free-astronauta-ni-ntilde-o-5b4fbbece9bf76.9583068315319521089574.jpg";
+import Background from './assets/spaceman.jpg'
 import BlogPost from "./BlogPost";
 import Blogs from "./data/data";
 import AnchorComponent from "./additional/Anchor";

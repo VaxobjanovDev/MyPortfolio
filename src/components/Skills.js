@@ -82,7 +82,7 @@ const Skills = () => {
         <PacrticleComponent theme="darkTheme" />
         <Main>
           <Title>
-            <FrontEnd width={70} height={70} />
+            <FrontEnd width={70} height={70} fill='currentColor' />
             Front End Developer
           </Title>
           <Description>
@@ -100,7 +100,7 @@ const Skills = () => {
         </Main>
         <Main>
           <Title>
-            <BackEnd width={70} height={70} />
+            <BackEnd width={70} height={70}  fill='currentColor'/>
             Back End Developer
           </Title>
           <Description>
