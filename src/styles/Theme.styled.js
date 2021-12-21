@@ -8,6 +8,6 @@ export const lightTheme = {
 export const darkTheme = {
   body: "#000000",
   text: "#FFC61B",
-  textRgba: "#e3a765",
-  bodyRgba: "255,198,27"
+  textRgba: "227,167,101",
+  bodyRgba: "0,0,0"
 };
