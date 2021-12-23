@@ -7,7 +7,8 @@ import Logo from "./additional/Logo";
 import PacrticleComponent from "./additional/PacrticleComponent";
 import SocialMedia from "./additional/SocialMedia";
 
-import spaceman from './assets/spaceman.jpg'
+import spaceman from './assets/spaceman.png'
+import BigTitle from "./additional/BigTitle";
 
 const Box = styled.div`
   width:100vw;
@@ -45,11 +46,11 @@ const Main = styled.div`
   justify-content:space-evenly;
   align-items:center;
    
-  backdrop-filter:blur(20px);
+  backdrop-filter:blur(5px);
 
   position:absolute;
   left:calc(5rem + 5vw);
-  top:10rem;
+  top:12rem;
 
   font-size:calc(0.6rem + 1vw);
   font-style:italic;
@@ -75,6 +76,7 @@ const About = () => {
         <h3>I'm interested in Back-end field also. So I'm learning Node js and Express js nowadays.</h3>
         <h3>My law is to the end of learning everything. Also It also doesn’t matter if the growth is minus or plus, the important thing is that it’s done</h3>
       </Main>
+      <BigTitle text="ABOUT" top="10%" left="5%"/>
     </Box>
   </ThemeProvider>;
 };

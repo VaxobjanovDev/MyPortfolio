@@ -18,7 +18,7 @@ const Box = styled.div`
   align-items:center;
   background: ${(props) => props.theme.body};
 `;
-const Main = styled.div`
+const Main = styled.ul`
   position: fixed;
   top: 15rem;
   left: calc(10rem + 15vw);

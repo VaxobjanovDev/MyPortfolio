@@ -14,8 +14,8 @@ const Main = () => {
 		<MainContainer>
 			<Container>
 				<Button/>
-				<Logo theme={click?'dark':'light'}/>
-				<SocialMedia theme={click?'dark':'light'}/>
+				<Logo theme={click?'darkTheme':'lightTheme'}/>
+				<SocialMedia theme={click?'darkTheme':'lightTheme'}/>
 				<DarkContainer click={click}/>
 				<Center click={click}>
 					<MyLogo onClick={()=>setClick(!click)} width={click?150:250} height={click?150:250}/>

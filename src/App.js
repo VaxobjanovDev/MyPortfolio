@@ -8,11 +8,13 @@ import About from "./components/About";
 import Blog from "./components/Blog";
 import Skills from "./components/Skills";
 import Works from "./components/Works";
+import Sound from "./components/additional/Sound";
 
 const App = () => {
   return (
     <>
       <GlobalStyle />
+      <Sound/>
       <ThemeProvider theme={lightTheme}>
         <BrowserRouter>
           <Routes>

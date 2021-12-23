@@ -3,10 +3,11 @@ import React, { useEffect, useState } from "react";
 import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import SocialMedia from "./additional/SocialMedia";
-import Background from './assets/spaceman.jpg'
+import Background from './assets/back2.png'
 import BlogPost from "./BlogPost";
 import Blogs from "./data/data";
 import AnchorComponent from "./additional/Anchor";
+import BigTitle from "./additional/BigTitle";
 
 const MainContainer = styled.div`
   background-image: url(${Background});
@@ -33,7 +34,7 @@ const Center = styled.div`
 const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(2, minmax(calc(10rem + 15vw), 1fr));
-  grid-gap: calc(1rem + 1vw);
+  grid-gap: calc(5rem + 1vw);
 `;
 
 const Blog = () => {
@@ -58,6 +59,7 @@ const Blog = () => {
             ))}
           </Grid>
         </Center>
+        <BigTitle text="BLOG" top="10%" right="75%"/>
       </Container>
     </MainContainer>
   );

@@ -34,10 +34,12 @@ const Visible = styled.div`
   top: -200%;
   left: 0;
   background-color: rgba(0, 0, 0, 0.8);
+	transform:rotate(-180deg);
   ${Box}:hover & {
     top: 0;
     bottom: 0;
     transition: all ease 1s;
+		transform:rotate(0deg);
   }
 `;
 const Title = styled.h1`

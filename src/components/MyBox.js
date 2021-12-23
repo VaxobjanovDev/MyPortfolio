@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import Me from './assets/png-transparent-astronaut-astronaut-artist-drawing-printmaking-astronaut-poster-outer-space-painting.png'
+import Me from './assets/back.png'
 import { motion } from "framer-motion";
 
 
@@ -40,6 +40,7 @@ const BoxContainer = styled.div`
   width: 50%;
   position: relative;
   display: flex;
+  background:transparent;
 
   .pic {
     position: absolute;

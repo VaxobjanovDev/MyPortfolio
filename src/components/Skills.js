@@ -1,6 +1,7 @@
 import React from "react";
 import styled, { ThemeProvider } from "styled-components";
 import { darkTheme, lightTheme } from "../styles/Theme.styled";
+import BigTitle from "./additional/BigTitle";
 import Button from "./additional/Button";
 import { BackEnd, FrontEnd } from "./additional/Img/svg";
 import Logo from "./additional/Logo";
@@ -74,12 +75,12 @@ const Description = styled.div`
 `;
 const Skills = () => {
   return (
-    <ThemeProvider theme={darkTheme}>
+    <ThemeProvider theme={lightTheme}>
       <Box>
-        <Logo theme='darkTheme'/>
-        <SocialMedia theme='darkTheme'/>
+        <Logo theme='lightTheme'/>
+        <SocialMedia theme='lightTheme'/>
         <Button />
-        <PacrticleComponent theme="darkTheme" />
+        <PacrticleComponent theme="lightTheme" />
         <Main>
           <Title>
             <FrontEnd width={70} height={70} fill='currentColor' />
@@ -115,6 +116,7 @@ const Skills = () => {
             <p>Node js, Express js, MongoDb and others.</p>
           </Description>
         </Main>
+        <BigTitle text="MY SKILLS" top="80%" left="40%"/>
       </Box>
     </ThemeProvider>
   );
