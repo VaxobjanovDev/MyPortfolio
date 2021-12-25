@@ -9,7 +9,7 @@ const Box = styled.div`
 	cursor:pointer;
 	position:fixed;
 	top:3rem;
-	left:22rem;
+	left:16rem;
 	z-index:5;
 
 	&>*:nth-child(1){
@@ -27,6 +27,11 @@ const Box = styled.div`
 	&>*:nth-child(5){
 		animation-delay:0.5s;
 	}
+
+	@media screen and (max-width:576px){
+		top:5rem;
+		left:2rem;
+	  }
 `
 const Play = keyframes`
 	0%{
