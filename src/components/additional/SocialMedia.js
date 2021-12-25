@@ -1,7 +1,6 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import { GitHub, Instagram, Telegram, YouTube } from "./Img/svg";
-import { darkTheme } from "../../styles/Theme.styled";
 import styled from "styled-components";
 
 const Icons = styled.div`
@@ -18,17 +17,35 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.8rem 0;
   }
+  @media screen and (max-width:576px){
+    left: 1rem; 
+    & > *:not(:last-child) {
+      margin: 0.4rem 0;
+    } 
+  }
 `;
 
 const Lines = styled.div`
   margin: 0 auto;
   width: 2px;
   height: 8rem;
-  background-color: ${(props) =>
-    props.color === "darkTheme" ? darkTheme.text : darkTheme.body};
+  background-color: ${(props) =>props.theme.text};
+  @media screen and (max-width:576px){
+    height: 5rem;  
+  }
+
 `;
 
-const SocialMedia = (props) => {
+const Link = styled(NavLink)`
+  color:${props=>props.theme.text};
+  @media screen and (max-width:576px){
+    &>:nth-child(1){
+      width:1.2rem;
+      height:1.2rem
+    }
+  }
+`
+const SocialMedia = () => {
   return (
     <Icons>
       <div>
@@ -41,12 +58,12 @@ const SocialMedia = (props) => {
           <GitHub
             width={30}
             height={30}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill="currentColor"
           />
         </Link>
       </div>
       <div>
-        <NavLink
+        <Link
           onClick={() => {
             window.open("https://t.me/VaxobjanovDev");
           }}
@@ -55,30 +72,30 @@ const SocialMedia = (props) => {
           <Telegram
             width={30}
             height={30}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill="currentColor"
           />
-        </NavLink>
+        </Link>
       </div>
       <div>
-        <NavLink to="/">
+        <Link to="/">
           <Instagram
             width={30}
             height={30}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill="currentColor"
           />
-        </NavLink>
+        </Link>
       </div>
       <div>
-        <NavLink to="/">
+        <Link to="/">
           <YouTube
             width={30}
             height={30}
-            fill={props.theme === "darkTheme" ? darkTheme.text : darkTheme.body}
+            fill="currentColor" 
           />
-        </NavLink>
+        </Link>
       </div>
 
-      <Lines color={props.theme} />
+      <Lines  />
     </Icons>
   );
 };
