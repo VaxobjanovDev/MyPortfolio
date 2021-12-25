@@ -34,6 +34,11 @@ const Box = styled(motion.div)`
   border-left: 2px solid ${(props) => props.theme.body};
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 3;
+
+  @media screen and (max-width:576px){
+    flex-direction:column;
+    flex-wrap:wrap;
+  }
 `;
 
 const BoxContainer = styled.div`
@@ -50,6 +55,7 @@ const BoxContainer = styled.div`
     width: 100%;
     height: auto;
   }
+
 `;
 
 const Text = styled.div`
