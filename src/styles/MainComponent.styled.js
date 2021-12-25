@@ -51,17 +51,25 @@ export const Center = styled.button`
 
   &>:first-child{
       animation:${rotate} infinite 5s linear;
+      color:${props=>props.theme.text};
   }
 
   &>:last-child{
       display:${props=>props.click?'none':'inline-block'};
       padding-top:1rem;
+      color:${props=>props.theme.text};
+  }
+  @media screen and (max-width:576px){
+    &>:first-child{
+      width:${props=>props.click?"60px":"150px"};
+      height:${props=>props.click?"60px":"150px"};
+    }
   }
 `;
 
 export const DarkContainer = styled.div`
 	position:absolute;
-	background-color:#000000;	 
+	background-color:${props=>props.theme.text};	 
 	top:0;
 	bottom:0;
 	right:50%;
@@ -69,6 +77,12 @@ export const DarkContainer = styled.div`
 	height:${props=>props.click?"100%":"0%"};
 	transition:height 0.5s ease, width 1s ease 0.5s;
 	z-index:1;
+
+  @media screen and (max-width:576px){
+    right:0%;
+    width:${props=>props.click?"100%":"0%"};
+	  height:${props=>props.click?"50%":"0%"};
+  }
 `
 
 export const Contact = styled(NavLink)`
@@ -78,6 +92,10 @@ export const Contact = styled(NavLink)`
   right: 2rem;
   font-size: 2rem;
   z-index: 3;
+  @media screen and (max-width:576px){
+    font-size: 1.2rem;
+    right: 1rem;
+  }
 `;
 
 export const Blog = styled(NavLink)`
@@ -88,6 +106,10 @@ export const Blog = styled(NavLink)`
   right: 3rem;
   font-size: 2rem;
   z-index: 3;
+  @media screen and (max-width:576px){
+    font-size: 1.5rem;
+    right: 2rem;
+  }
 `;
 
 export const Work = styled(NavLink)`
@@ -98,6 +120,10 @@ color: ${(props) => props.click?props.theme.body:props.theme.text};
   left: 3rem;
   font-size: 2rem;
   z-index: 3;
+  @media screen and (max-width:576px){
+    font-size: 1.5rem;
+    left: 1.8rem;
+  }
 `;
 
 export const BottomBar = styled.div`
@@ -114,10 +140,23 @@ export const About = styled(NavLink)`
   color: ${(props) => props.click?props.theme.body:props.theme.text};
   font-size: 2rem;
   z-index: 1;
+  @media screen and (max-width:576px){
+    font-size: 1.5rem;
+  }
 `;
 
 export const Skills = styled(NavLink)`
   color: ${(props) => props.theme.text};
   font-size: 2rem;
   z-index: 1;
+  @media screen and (max-width:576px){
+    font-size: 1.5rem;
+  }
 `;
+
+// export const LogoDark = styled(NavLink)`
+// text-decoration:none;
+//   color: ${(props) => props.click?props.theme.body:props.theme.text};
+//   font-size: 2rem;
+//   z-index: 1;
+// `;
