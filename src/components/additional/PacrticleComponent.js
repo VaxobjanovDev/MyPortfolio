@@ -10,13 +10,13 @@ const Box = styled.div`
     bottom:0;
     right:0;
     left:0;
-    z-index:1;
+    color:${props=>props.theme.text}; 
 `
 
-const PacrticleComponent = (props) => {
+const PacrticleComponent = ({theme}) => {
     return (
         <Box>
-            <Particles params={props.theme ==='lightTheme'?lightMode:darkMode}/>
+            <Particles params={theme === "off"?darkMode:lightMode}/>
         </Box>
     )
 }
