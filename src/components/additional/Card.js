@@ -8,10 +8,10 @@ const Box = styled.li`
   background: ${(props) => props.theme.text};
   width: 16rem;
   height: 40vh;
-  padding: 1.5rem 2rem;
+  padding: 1rem 1.5rem;
   margin-right: 8rem;
   color: ${(props) => props.theme.text};
-  border-radius: 0 50px 0 50px;
+  border-radius:3px;
   display: flex;
   flex-direction: column;
   border: 1px solid ${(props) => props.theme.body};
@@ -19,13 +19,13 @@ const Box = styled.li`
 
   z-index: 3;
   &:hover {
-    background-color: ${(props) => props.theme.body};
+    background-color: ${(props) => props.theme.text};
     color: ${(props) => props.theme.text};
     border: 1px solid ${(props) => props.theme.text};
   }
 `;
 const Visible = styled.div`
-  border-radius: 0 50px 0 50px;
+
   position: absolute;
   display: flex;
   flex-direction: column;
@@ -33,7 +33,8 @@ const Visible = styled.div`
   justify-content: space-evenly;
   top: -200%;
   left: 0;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: rgba(${props=>props.theme.textRgba},0.8);
+  color:${props=>props.theme.body};
 	transform:rotate(-180deg);
   ${Box}:hover & {
     top: 0;
@@ -51,7 +52,7 @@ const Description = styled.h2`
   font-weight: 500;
 `;
 const Tags = styled.div`
-  border-top: 2px solid ${(props) => props.theme.text};
+  border-top: 2px solid ${(props) => props.theme.body};
   padding-top: 0.5rem;
 `;
 const Tag = styled.span`
@@ -62,21 +63,21 @@ const Footer = styled.footer`
   justify-content: space-between;
 `;
 const Link = styled(NavLink)`
-  background-color: ${(props) => props.theme.text};
+  background-color: ${(props) => props.theme.body};
   text-decoration: none;
-  color: ${(props) => props.theme.body};
+  color: ${(props) => props.theme.text};
   padding: 0.5rem calc(2rem + 2vw);
   border-radius: 0 0 0 50px;
   font-size: calc(1rem + 0.5vw);
 `;
 const Git = styled(NavLink)`
-  color: ${(props) => props.theme.text};
+  color: ${(props) => props.theme.body};
   text-decoration: none;
 `;
 const Card = ({ data }) => {
   const { id, img, name, description, tags, demo, github } = data;
   return (
-    <Box>
+    <Box key={id}>
       <img src={img} alt={name} />
       <Visible>
         <Title>{name}</Title>
@@ -87,10 +88,16 @@ const Card = ({ data }) => {
           ))}
         </Tags>
         <Footer>
-          <Link to={{ pathname: `${demo}` }} target="_blank">
+          <Link onClick={() => {
+            window.open(demo);
+          }}
+          to="/">
             Visit
           </Link>
-          <Git to={{ pathname: `${github}` }} target="_blank">
+          <Git onClick={() => {
+            window.open(github);
+          }}
+          to="/">
             <GitHub width={30} height={30} fill="currentColor" />
           </Git>
         </Footer>
