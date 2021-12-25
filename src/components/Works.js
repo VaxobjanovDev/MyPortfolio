@@ -1,8 +1,5 @@
 import styled from "styled-components";
 import React, { useEffect, useRef } from "react";
-import { ThemeProvider } from "styled-components";
-import { darkTheme } from "../styles/Theme.styled";
-import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import SocialMedia from "./additional/SocialMedia";
 
@@ -38,6 +35,7 @@ const Rotate = styled.div`
 	width:80px;
 	height:80px;
 	z-index:3;
+  color:${props=>props.theme.text};
 `
 const Works = () => {
   const ref = useRef(null);
@@ -58,22 +56,19 @@ const Works = () => {
   }, []);
 
   return (
-    <ThemeProvider theme={darkTheme}>
       <Box>
-        <Logo theme="darkTheme" />
-        <SocialMedia theme="darkTheme" />
-        <Button />
+        <Logo/>
+        <SocialMedia />
         <Main ref={ref}>
           {WorkData.map((item) => {
             return <Card key={item.id} data={item} />;
           })}
         </Main>
 				<Rotate ref={myLogo}>
-					<MyLogo width={80} height={80} fill={darkTheme.text}/>
+					<MyLogo width={80} height={80} fill="currentColor"/>
 				</Rotate>
 				<BigTitle text="MY WORKS" top='15%' right='20%' />
       </Box>
-    </ThemeProvider>
   );
 };
 

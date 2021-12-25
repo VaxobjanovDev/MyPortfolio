@@ -1,8 +1,6 @@
 import React from "react";
-import styled, { ThemeProvider } from "styled-components";
-import { darkTheme, lightTheme } from "../styles/Theme.styled";
+import styled from "styled-components";
 import BigTitle from "./additional/BigTitle";
-import Button from "./additional/Button";
 import { BackEnd, FrontEnd } from "./additional/Img/svg";
 import Logo from "./additional/Logo";
 import PacrticleComponent from "./additional/PacrticleComponent";
@@ -73,52 +71,49 @@ const Description = styled.div`
     background-color: ${(props) => props.theme.text};
   }
 `;
-const Skills = () => {
+const Skills = ({ theme }) => {
   return (
-    <ThemeProvider theme={lightTheme}>
-      <Box>
-        <Logo theme='lightTheme'/>
-        <SocialMedia theme='lightTheme'/>
-        <Button />
-        <PacrticleComponent theme="lightTheme" />
-        <Main>
-          <Title>
-            <FrontEnd width={70} height={70} fill='currentColor' />
-            Front End Developer
-          </Title>
-          <Description>
-            I am a frontend developer. I have been practicing this field for
-            over a year
-          </Description>
-          <Description>
-            <strong>Skills:</strong>
-            <p>Html, Css, Javascript, React, Bootstrap etc.</p>
-          </Description>
-          <Description>
-            <strong>Tools:</strong>
-            <p>VScode, Github, Stackoverflow, You Tube, Google</p>
-          </Description>
-        </Main>
-        <Main>
-          <Title>
-            <BackEnd width={70} height={70}  fill='currentColor'/>
-            Back End Developer
-          </Title>
-          <Description>
-            I am also currently studying the Backend field.
-          </Description>
-          <Description>
-            <strong>Studying resource:</strong>
-            <p>Udemy cource, You Tube, Dadajanov's lessons and others.</p>
-          </Description>
-          <Description>
-            <strong>Tools:</strong>
-            <p>Node js, Express js, MongoDb and others.</p>
-          </Description>
-        </Main>
-        <BigTitle text="MY SKILLS" top="80%" left="40%"/>
-      </Box>
-    </ThemeProvider>
+    <Box>
+      <Logo />
+      <SocialMedia />
+      <PacrticleComponent theme={theme} />
+      <Main>
+        <Title>
+          <FrontEnd width={70} height={70} fill="currentColor" />
+          Front End Developer
+        </Title>
+        <Description>
+          I am a frontend developer. I have been practicing this field for over
+          a year
+        </Description>
+        <Description>
+          <strong>Skills:</strong>
+          <p>Html, Css, Javascript, React, Bootstrap etc.</p>
+        </Description>
+        <Description>
+          <strong>Tools:</strong>
+          <p>VScode, Github, Stackoverflow, You Tube, Google</p>
+        </Description>
+      </Main>
+      <Main>
+        <Title>
+          <BackEnd width={70} height={70} fill="currentColor" />
+          Back End Developer
+        </Title>
+        <Description>
+          I am also currently studying the Backend field.
+        </Description>
+        <Description>
+          <strong>Studying resource:</strong>
+          <p>Udemy cource, You Tube, Dadajanov's lessons and others.</p>
+        </Description>
+        <Description>
+          <strong>Tools:</strong>
+          <p>Node js, Express js, MongoDb and others.</p>
+        </Description>
+      </Main>
+      <BigTitle text="MY SKILLS" top="80%" left="40%" />
+    </Box>
   );
 };
 

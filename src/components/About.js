@@ -1,8 +1,5 @@
 import styled, { keyframes } from "styled-components";
 import React from "react";
-import { ThemeProvider }  from "styled-components";
-import { darkTheme } from "../styles/Theme.styled";
-import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import PacrticleComponent from "./additional/PacrticleComponent";
 import SocialMedia from "./additional/SocialMedia";
@@ -59,13 +56,12 @@ const Main = styled.div`
   line-height:1.5;
 `
 
-const About = () => {
-  return <ThemeProvider theme={darkTheme}>
+const About = ({theme}) => {
+  return (
     <Box>
-      <Logo theme='darkTheme'/>
-      <SocialMedia theme='darkTheme'/>
-      <Button/>
-      <PacrticleComponent theme="darkTheme" />
+      <Logo/>
+      <SocialMedia/>
+      <PacrticleComponent theme={theme}/>
 
       <SpaceMan>
         <img src={spaceman} alt="spaceman"/>
@@ -78,7 +74,7 @@ const About = () => {
       </Main>
       <BigTitle text="ABOUT" top="10%" left="5%"/>
     </Box>
-  </ThemeProvider>;
+  )
 };
 
 export default About;
