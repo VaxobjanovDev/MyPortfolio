@@ -1,9 +1,8 @@
 import styled from "styled-components";
 import React, { useEffect, useState } from "react";
-import Button from "./additional/Button";
 import Logo from "./additional/Logo";
 import SocialMedia from "./additional/SocialMedia";
-import Background from './assets/back2.png'
+import Background from "./assets/back2.png";
 import BlogPost from "./BlogPost";
 import Blogs from "./data/data";
 import AnchorComponent from "./additional/Anchor";
@@ -20,7 +19,7 @@ const Container = styled.div`
   background-color: ${(props) => `rgba(${props.theme.bodyRgba},0.5)`};
   width: 100%;
   height: auto;
-
+  overflow-x: hidden;
   position: relative;
   padding-bottom: 5rem;
 `;
@@ -48,7 +47,6 @@ const Blog = () => {
   return (
     <MainContainer>
       <Container>
-        <Button />
         <Logo />
         <SocialMedia />
         <AnchorComponent number={number} />
@@ -59,7 +57,7 @@ const Blog = () => {
             ))}
           </Grid>
         </Center>
-        <BigTitle text="BLOG" top="10%" right="75%"/>
+        <BigTitle text="BLOG" top="10%" right="75%" />
       </Container>
     </MainContainer>
   );
