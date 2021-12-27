@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import React from "react";
 import { NavLink } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const Box = styled(NavLink)`
   width: calc(10rem + 15vw);
@@ -14,14 +15,20 @@ const Box = styled(NavLink)`
 
   display: flex;
   flex-direction: column;
-  z-index: 5;
+  z-index: 1;
 
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
     transition: all 0.3s ease;
   }
+  @media (min-width: 577px) and (max-width: 768px) {
+    width: calc(20rem + 15vw);
+  }
 `;
+
+const Container = styled(motion.div)``;
+
 const Image = styled.div`
   background-image: ${(props) => `url(${props.img})`};
   width: 100%;
@@ -56,18 +63,32 @@ const Date = styled.span`
   padding-right: 0.5rem;
 `;
 
+const item = {
+  hidden: {
+    scale: 0.5,
+  },
+  show: {
+    scale: 1,
+    transition: {
+      type: "spring",
+      duration: 0.5,
+    },
+  },
+};
 const BlogPost = ({ blog }) => {
   return (
-    <Box to="/">
-      <Image img={blog.imgSrc} />
-      <Title>{blog.name}</Title>
-      <Hashtags>
-        {blog.tags.map((tag, id) => (
-          <Tag key={id}>#{tag}</Tag>
-        ))}
-      </Hashtags>
-      <Date>{blog.date}</Date>
-    </Box>
+    <Container variants={item}>
+      <Box to="/">
+        <Image img={blog.imgSrc} />
+        <Title>{blog.name}</Title>
+        <Hashtags>
+          {blog.tags.map((tag, id) => (
+            <Tag key={id}>#{tag}</Tag>
+          ))}
+        </Hashtags>
+        <Date>{blog.date}</Date>
+      </Box>
+    </Container>
   );
 };
 
