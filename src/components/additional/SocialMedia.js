@@ -2,6 +2,7 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 import { GitHub, Instagram, Telegram, YouTube } from "./Img/svg";
 import styled from "styled-components";
+import { motion } from "framer-motion";
 
 const Icons = styled.div`
   diplay: flex !important;
@@ -17,85 +18,91 @@ const Icons = styled.div`
   & > *:not(:last-child) {
     margin: 0.8rem 0;
   }
-  @media screen and (max-width:576px){
-    left: 1rem; 
+  @media screen and (max-width: 576px) {
+    left: 1rem;
     & > *:not(:last-child) {
       margin: 0.4rem 0;
-    } 
+    }
+  }
+  @media (min-width: 769px) and (max-width: 924px) {
+    left: 1rem;
   }
 `;
 
-const Lines = styled.div`
+const Lines = styled(motion.div)`
   margin: 0 auto;
   width: 2px;
   height: 8rem;
-  background-color: ${(props) =>props.theme.text};
-  @media screen and (max-width:576px){
-    height: 5rem;  
+  background-color: ${(props) => props.theme.text};
+  @media screen and (max-width: 576px) {
+    height: 5rem;
   }
-
 `;
 
 const Link = styled(NavLink)`
-  color:${props=>props.theme.text};
-  @media screen and (max-width:576px){
-    &>:nth-child(1){
-      width:1.2rem;
-      height:1.2rem
+  color: ${(props) => props.theme.text};
+  @media screen and (max-width: 576px) {
+    & > :nth-child(1) {
+      width: 1.2rem;
+      height: 1.2rem;
     }
   }
-`
+`;
 const SocialMedia = () => {
   return (
     <Icons>
-      <div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1 }}
+      >
         <Link
           onClick={() => {
             window.open("https://github.com/VaxobjanovDev");
           }}
           to="/"
         >
-          <GitHub
-            width={30}
-            height={30}
-            fill="currentColor"
-          />
+          <GitHub width={30} height={30} fill="currentColor" />
         </Link>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.2 }}
+      >
         <Link
           onClick={() => {
             window.open("https://t.me/VaxobjanovDev");
           }}
           to="/"
         >
-          <Telegram
-            width={30}
-            height={30}
-            fill="currentColor"
-          />
+          <Telegram width={30} height={30} fill="currentColor" />
         </Link>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.4 }}
+      >
         <Link to="/">
-          <Instagram
-            width={30}
-            height={30}
-            fill="currentColor"
-          />
+          <Instagram width={30} height={30} fill="currentColor" />
         </Link>
-      </div>
-      <div>
+      </motion.div>
+      <motion.div
+        initial={{ transform: "scale(0)" }}
+        animate={{ scale: [0, 1, 1.5, 1] }}
+        transition={{ type: "spring", duration: 1, delay: 1.6 }}
+      >
         <Link to="/">
-          <YouTube
-            width={30}
-            height={30}
-            fill="currentColor" 
-          />
+          <YouTube width={30} height={30} fill="currentColor" />
         </Link>
-      </div>
+      </motion.div>
 
-      <Lines  />
+      <Lines
+        initial={{ height: 0 }}
+        animate={{ height: "8rem" }}
+        transition={{ type: "spring", duration: 1, delay: 0.8 }}
+      />
     </Icons>
   );
 };

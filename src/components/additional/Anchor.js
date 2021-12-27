@@ -15,19 +15,20 @@ const Slider = styled.div`
   justify-content: center;
   align-items: center;
   transform: translateY(-100%);
-
+  color: ${(props) => props.theme.text};
   .chain {
     transform: rotate(135deg);
   }
 `;
 
 const PreAnchor = styled.div`
-  position:absolute;
-  top:0;
-  right:2rem;
-`
+  position: absolute;
+  top: 0;
+  right: 2rem;
+  color: ${(props) => props.theme.text};
+`;
 
-const AnchorComponent = ({number}) => {
+const AnchorComponent = ({ number }) => {
   const ref = useRef(null);
   const hiddenRef = useRef(null);
 
@@ -37,21 +38,20 @@ const AnchorComponent = ({number}) => {
       let windowSize = window.innerHeight;
       let bodyHeight = document.body.offsetHeight;
 
-      
       let differenceBetw = Math.max(bodyHeight - (scrollPosition + windowSize));
 
       let differencePosit = (differenceBetw * 100) / (bodyHeight - windowSize);
+      if (ref.current) {
+        ref.current.style.transform = `translateY(${-differencePosit}%)`;
+      }
 
-      ref.current.style.transform = `translateY(${-differencePosit}%)`;
-
-      if(window.pageYOffset>5){
-        hiddenRef.current.style.display = 'none'
-    }else{
-        hiddenRef.current.style.display = 'block'
-
-    }
+      if (window.pageYOffset > 5) {
+        hiddenRef.current.style.display = "none";
+      }
+      if (hiddenRef.current) {
+        hiddenRef.current.style.display = "block";
+      }
     };
-
 
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
@@ -59,9 +59,9 @@ const AnchorComponent = ({number}) => {
 
   return (
     <Container>
-        <PreAnchor ref={hiddenRef} className='hidden'>
-            <Anchor width={70} height={70} fill="currentColor"/>
-        </PreAnchor>
+      <PreAnchor ref={hiddenRef} className="hidden">
+        <Anchor width={70} height={70} fill="currentColor" />
+      </PreAnchor>
       <Slider ref={ref}>
         {[...Array(number)].map((item, id) => (
           <Link

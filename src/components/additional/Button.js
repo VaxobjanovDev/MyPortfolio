@@ -4,10 +4,10 @@ import { ButtonSvg } from "./Img/svg";
 
 const rotate = keyframes`
 from{
-    transform:rotate(120deg);
+  transform:rotate(120deg);
 }
 to{
-    transform:rotate(360deg);
+  transform:rotate(360deg);
 }
 `;
 const rotates = keyframes`
@@ -25,15 +25,10 @@ const Main = styled.div`
   left: 50%;
   top: 2rem;
   z-index: 5;
-  & > *:nth-child(1) {
-    color: ${(props) => props.theme.text};
-  }
-  & > *:nth-child(3) {
-    color: ${(props) => props.theme.text};
-  }
-  @media screen and (max-width:576px){
-    top:1.2rem;
-    left: 50%;  
+  color: ${(props) => props.theme.text};
+  @media screen and (max-width: 576px) {
+    top: 1.2rem;
+    left: 50%;
   }
 `;
 const ButtonStyle = styled.button`
@@ -47,7 +42,7 @@ const ButtonStyle = styled.button`
   background-color: ${(props) =>
     props.click ? props.theme.body : props.theme.body};
   transform: rotate(${(props) => (props.click ? "120deg" : "-120deg")});
-  @media screen and (max-width:576px){
+  @media screen and (max-width: 576px) {
     width: 2.5rem;
     height: 2.5rem;
   }
@@ -69,7 +64,7 @@ const Button = () => {
   const [click, setClick] = useState(false);
 
   return (
-    <Main>
+    <Main click={click}>
       <span>Off</span>
       <ButtonStyle click={click}>
         <Rotate onClick={() => setClick(!click)} click={click}>

@@ -1,18 +1,15 @@
 import React from "react";
 import styled from "styled-components";
-import Me from './assets/back.png'
+import Me from "./assets/back.png";
 import { motion } from "framer-motion";
-
-
 
 const Box = styled(motion.div)`
   position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
-
   display: flex;
-  width: 65vw;
+  width: 68vw;
   height: 45vh;
 
   background: linear-gradient(
@@ -21,13 +18,12 @@ const Box = styled(motion.div)`
         ${(props) => props.theme.text} 50%
       )
       bottom,
-			linear-gradient(
+    linear-gradient(
         to right,
         ${(props) => props.theme.body} 50%,
         ${(props) => props.theme.text} 50%
       )
       top;
- 
   background-repeat: no-repeat;
   background-size: 100% 2px;
 
@@ -35,9 +31,23 @@ const Box = styled(motion.div)`
   border-right: 2px solid ${(props) => props.theme.text};
   z-index: 3;
 
-  @media screen and (max-width:576px){
-    flex-direction:column;
-    flex-wrap:wrap;
+  @media screen and (max-width: 768px) {
+    flex-direction: column;
+    justify-content: space-between;
+    background: linear-gradient(
+          ${(props) => props.theme.text} 50%,
+          ${(props) => props.theme.body} 50%
+        )
+        0px 0px / 2px 100% no-repeat,
+      linear-gradient(
+          ${(props) => props.theme.text} 50%,
+          ${(props) => props.theme.body} 50%
+        )
+        2px 100%;
+
+    background-position: 0px 0px, 100% 0px;
+    border-top: 2px solid ${(props) => props.theme.body};
+    border-bottom: 2px solid ${(props) => props.theme.text};
   }
 `;
 
@@ -53,9 +63,24 @@ const BoxContainer = styled.div`
     left: 50%;
     transform: translate(-50%, 0);
     width: 100%;
-    height: auto;
+    height: 90%;
   }
-
+ @media(min-width:577px) and (max-width:768px){
+      width: 100%;
+      height:auto;
+      .pic {
+        width:80%;
+        height: auto;
+      }
+  }
+  @media screen and (max-width:576px){
+    width: 100%;
+    height:auto;
+    .pic {
+      width:100%;
+      height: auto;
+    }
+ 
 `;
 
 const Text = styled.div`
@@ -73,13 +98,16 @@ const Text = styled.div`
     font-size: calc(0.5rem + 1.5vw);
     font-weight: 300;
   }
+  @media screen and (max-width: 576px) {
+    font-size: calc(1em + 1.5vw);
+  }
 `;
 
 const MyBox = () => {
   return (
     <Box
       initial={{ height: 0 }}
-      animate={{ height: "40vh" }}
+      animate={{ height: "65vh" }}
       transition={{ type: "spring", duration: 2, delay: 1 }}
     >
       <BoxContainer>
@@ -91,15 +119,14 @@ const MyBox = () => {
       </BoxContainer>
       <BoxContainer>
         <motion.div
-					initial={{opacity:0}}
-					animate={{opacity:1}}
-					transition={{duration:1,delay:2}}
-				>
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 2 }}
+        >
           <img className="pic" src={Me} alt="Background" />
         </motion.div>
       </BoxContainer>
     </Box>
-
   );
 };
 
