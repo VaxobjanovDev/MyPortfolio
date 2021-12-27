@@ -1,3 +1,4 @@
+import { motion } from "framer-motion";
 import React from "react";
 import styled from "styled-components";
 import BigTitle from "./additional/BigTitle";
@@ -14,8 +15,23 @@ const Box = styled.div`
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 576px) {
+    height: 150vh;
+    flex-direction: column;
+    justify-content: center;
+    & > :last-child {
+      top: 80%;
+      left: 0%;
+    }
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    height: 150vh;
+    flex-direction: column;
+    justify-content: center;
+  }
 `;
-const Main = styled.div`
+const Main = styled(motion.div)`
   width: 30vw;
   height: 60vh;
   border: 2px solid ${(props) => props.theme.text};
@@ -34,6 +50,17 @@ const Main = styled.div`
   &:hover {
     color: ${(props) => props.theme.body};
     background-color: ${(props) => props.theme.text};
+  }
+
+  @media screen and (max-width: 576px) {
+    margin: 1rem auto;
+    width: 50vw;
+    height: 45vh;
+  }
+  @media (min-width: 577px) and (max-width: 768px) {
+    margin: 1rem auto;
+    width: 60vw;
+    height: 45vh;
   }
 `;
 const Title = styled.h2`
@@ -77,7 +104,16 @@ const Skills = ({ theme }) => {
       <Logo />
       <SocialMedia />
       <PacrticleComponent theme={theme} />
-      <Main>
+      <Main
+        initial={{
+          x: -1000,
+          transition: { type: "spring", duration: 1.5, delay: 0.5 },
+        }}
+        animate={{
+          x: 0,
+          transition: { type: "spring", duration: 2, delay: 0.5 },
+        }}
+      >
         <Title>
           <FrontEnd width={70} height={70} fill="currentColor" />
           Front End Developer
@@ -95,7 +131,16 @@ const Skills = ({ theme }) => {
           <p>VScode, Github, Stackoverflow, You Tube, Google</p>
         </Description>
       </Main>
-      <Main>
+      <Main
+        initial={{
+          x: 1000,
+          transition: { type: "spring", duration: 1.5, delay: 0.5 },
+        }}
+        animate={{
+          x: 0,
+          transition: { type: "spring", duration: 2, delay: 0.5 },
+        }}
+      >
         <Title>
           <BackEnd width={70} height={70} fill="currentColor" />
           Back End Developer
