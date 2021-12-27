@@ -5,14 +5,12 @@ import styled from "styled-components";
 import { motion } from "framer-motion";
 
 const Icons = styled.div`
-  diplay: flex !important;
+  diplay: flex;
   flex-direction: column;
   align-items: center;
-
   position: fixed;
   bottom: 0rem;
   left: 2rem;
-
   z-index: 5;
 
   & > *:not(:last-child) {
@@ -99,9 +97,14 @@ const SocialMedia = () => {
       </motion.div>
 
       <Lines
-        initial={{ height: 0 }}
-        animate={{ height: "8rem" }}
-        transition={{ type: "spring", duration: 1, delay: 0.8 }}
+        initial={{
+          y: 200,
+          transition: { type: "spring", duration: 1.5, delay: 0.5 },
+        }}
+        animate={{
+          y: 0,
+          transition: { type: "spring", duration: 1.5, delay: 0.5 },
+        }}
       />
     </Icons>
   );
